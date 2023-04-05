@@ -5,38 +5,43 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 ## API Endpoints
 #### Products
-- Index 
-- Show
-- Create [token required]
+- Index: GET /products
+- Show: GET /products/:id
+- Create [token required]: POST /products
 - [OPTIONAL] Top 5 most popular products 
 - [OPTIONAL] Products by category (args: product category)
 
 #### Users
-- Index [token required]
-- Show [token required]
-- Create N[token required]
+- Index [token required]: GET /users
+- Show [token required]: GET /users/:id
+- Create N[token required]: POST /users
 
 #### Orders
-- Current Order by user (args: user id)[token required]
-- [OPTIONAL] Completed Orders by user (args: user id)[token required]
+- Current Order by user (args: user id)[token required]: GET /users/:user_id/orders/current
+- [OPTIONAL] Completed Orders by user (args: user id)[token required]: GET /users/:user_id/orders/complete
 
 ## Data Shapes
 #### Product
--  id
-- name
-- price
-- [OPTIONAL] category
+- id SERIAL PRIMARY KEY,
+- name VARCHAR(150),
+- price integer,
+- category VARCHAR
 
 #### User
-- id
-- firstName
-- lastName
-- password
+- id SERIAL PRIMARY KEY,
+- firstname VARCHAR(50),
+- lastname VARCHAR(50),
+- password_digest VARCHAR
 
 #### Orders
-- id
-- id of each product in the order
-- quantity of each product in the order
-- user_id
-- status of order (active or complete)
+- id SERIAL PRIMARY KEY,
+- user_id integer REFERENCES users(id),
+- status VARCHAR(10)
+
+#### Orders_Products
+- id SERIAL PRIMARY KEY,
+- order_id integer REFERENCES orders(id),
+- product_id integer REFERENCES products(id),
+- quantity integer
+
 
