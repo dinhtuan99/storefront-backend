@@ -1,5 +1,5 @@
 # Storefront Backend Project
-#### Requirements
+## Requirements
 Your task is to build an API for a shopping application.
 - Draft a database schema that covers all the data requirements.
 - Draft a map of endpoints to expose for the frontend.
