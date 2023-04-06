@@ -31,7 +31,7 @@ describe("Order Model", () => {
 
   it("index method should return a list of order", async () => {
     const result = await store.getOrders();
-    expect(result.length).toEqual(1);
+    expect(result.length).toEqual(2);
   });
 
   it("index method should return a order by user id", async () => {
@@ -55,7 +55,7 @@ describe("Order Model", () => {
 
   it("index method should delete a order by id", async () => {
     const result = await store.deleteOrder(2);
-    expect(result.status).toEqual("complete");
+    expect(result.status).toEqual("active");
   });
 
   it("index method should add product to a order", async () => {

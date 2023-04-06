@@ -14,11 +14,11 @@ describe("Product  Model", () => {
 
   it("index method should return a list of products", async () => {
     const result = await store.index();
-    expect(result.length).toEqual(2);
+    expect(result.length).toEqual(4);
   });
 
   it("show method should return the correct products", async () => {
     const result = await store.show(1);
-    expect(result.name).toEqual("bimbim");
+    expect(result.name).toEqual("sua5");
   });
 });

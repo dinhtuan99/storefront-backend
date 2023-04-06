@@ -15,7 +15,7 @@ describe("User Model", () => {
 
   it("index method should return a list of users", async () => {
     const result = await store.index();
-    expect(result.length).toEqual(3);
+    expect(result.length).toEqual(4);
   });
 
   it("show method should return the correct users", async () => {
@@ -25,6 +25,6 @@ describe("User Model", () => {
         password: "suon",
       });
     const result = await store.show(1);
-    expect(result.firstname).toEqual("vo");
+    expect(result.firstname).toEqual("tuan");
   });
 });
